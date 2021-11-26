@@ -20,18 +20,21 @@ body {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
+  margin-left: 50em;
+  margin-top: 2em;
 }
 .Column {
   /*background-image: url("/images/placeHolder.svg");*/
   background-image: url("/images/placeHolder.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
+  width: 200px;
   height: 200px;
-  width: 500px;
+  margin: 10px;
 }
-.card {
-}
-.card_Img {
-}
-.card_Img {
+.card2 {
+  background-image: url("/images/backImage.svg");
+  display: inline-block;
+  width: 160px;
+  height: 200px;
+  margin-left: 10px;
+  margin-bottom: -12rem;
 }
