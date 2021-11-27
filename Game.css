@@ -1,5 +1,5 @@
 body {
-  background-color: #2f80ed;
+  background-color:black;
 }
 .header {
   background-color: #d74e30;
@@ -37,4 +37,26 @@ body {
   height: 200px;
   margin-left: 10px;
   margin-bottom: -12rem;
+}
+
+.topCards {
+  background-image: url("/images/backImage.svg");
+
+  width: 160px;
+  height: 200px;
+  margin-left: 10px;
+  margin-bottom: -12.4rem; 
+
+}
+
+.shuffle{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+}
+.topStack{
+  width: 200px;
+  height: 200px;
+  margin: 10px;
 }
