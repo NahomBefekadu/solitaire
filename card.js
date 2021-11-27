@@ -23,4 +23,4 @@ let ShuffleDeck = function (DCK) {
 
 let newDeck = ShuffleDeck(deck);
 
-console.log(newDeck);
+//console.log(newDeck);
