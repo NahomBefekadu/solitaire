@@ -1,6 +1,8 @@
 let suits = ["H", "C", "D", "S"];
 let ranks = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"];
 let deck = [];
+let topDeck=[];
+let waste = [];
 const sleepNow = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
  
 createBoard();
@@ -39,3 +41,18 @@ let ShuffleDeck = function (DCK) {
 
 ShuffleDeck(deck);
 console.log(deck);
+ 
+
+function pickCard(){  
+  waste.push(deck.shift());
+  let vs = `/images/cards/${waste[0]}.svg`
+
+  var newNode = document.createElement('div')
+  newNode.className = 'discards'
+  newNode.style.backgroundImage=`url(${vs})`;
+  newNode.style.backgroundSize="164px 151px";
+  document.getElementById('disc').appendChild(newNode)
+}
+pickCard();
+
+console.log(waste);
