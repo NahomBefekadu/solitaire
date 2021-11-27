@@ -60,3 +60,20 @@ body {
   height: 200px;
   margin: 10px;
 }
+
+.waste{
+  background-image: url("/images/placeHolder.svg");
+  width: 150px;
+  height: 200px;
+  margin: 10px;
+}
+
+
+.discards {
+  width: 160px;
+  height: 150px;
+  object-fit: contain;
+  margin-top: 25px;
+  margin-bottom: -12.4rem; 
+
+}
