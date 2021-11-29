@@ -1,24 +1,24 @@
 let suits = ["H", "C", "D", "S"];
 let ranks = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"];
 let deck = [];
-let topDeck=[];
+let topDeck = [];
 let waste = [];
-const sleepNow = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
- 
+const sleepNow = (delay) =>
+  new Promise((resolve) => setTimeout(resolve, delay));
+
 createBoard();
 
-async function createBoard(){
+async function createBoard() {
   //
-  
+
   for (let j = 0; j < 28; j++) {
-    await sleepNow(30)
-    var newNode = document.createElement('div')
-    newNode.className = 'topCards'
-    document.getElementById('dd').appendChild(newNode)
+    await sleepNow(30);
+    var newNode = document.createElement("div");
+    newNode.className = "topCards";
+    document.getElementById("dd").appendChild(newNode);
     //await sleepNow(1);
-  } 
+  }
 }
- 
 
 for (let i = 0; i < 4; i++) {
   for (let j = 0; j < 13; j++) {
@@ -38,21 +38,22 @@ let ShuffleDeck = function (DCK) {
   return DCK;
 };
 
-
 ShuffleDeck(deck);
 console.log(deck);
- 
-
-function pickCard(){  
+let n = 0;
+function pickCard() {
   waste.push(deck.shift());
-  let vs = `/images/cards/${waste[0]}.svg`
+  let vs = `/images/cards/${waste[0 + n]}.svg`;
+  n++;
+  var newNode = document.createElement("div");
+  newNode.className = "discards";
+  newNode.style.backgroundImage = `url(${vs})`;
+  newNode.style.backgroundSize = "164px 151px";
+  document.getElementById("disc").appendChild(newNode);
 
-  var newNode = document.createElement('div')
-  newNode.className = 'discards'
-  newNode.style.backgroundImage=`url(${vs})`;
-  newNode.style.backgroundSize="164px 151px";
-  document.getElementById('disc').appendChild(newNode)
+  var list = document.getElementById("dd"); // Get the <ul> element with id="myList"
+  list.removeChild(list.childNodes[0]);
+  console.log(n);
 }
-pickCard();
 
 console.log(waste);
