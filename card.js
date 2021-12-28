@@ -159,8 +159,7 @@ dropZone.forEach((element) =>
 */
 const nodes = document.getElementsByClassName("move");
 const DropZone = document.querySelectorAll(".Column");
-var selectedn = "";
-var selectednpos = 0;
+var numMove = 0;
 
 for (let i = 0; i < nodes.length; i++) {
   nodes[i].addEventListener("dragstart", (e) => {
@@ -198,5 +197,60 @@ DropZone.forEach((element) =>
     element.classList.remove("drag-over", "selected");
     console.log("dropped");
     console.log(droppedEllementID);
+    numMove++;
+    updateStatus();
   })
 );
+
+const movesDone = document.querySelector(".moves");
+movesDone.innerHTML = `${numMove} Moves`;
+async function updateStatus() {
+  movesDone.innerHTML = `${numMove} Moves`;
+}
+var duration = 1800;
+function countdownTimer(duration) {
+  var timenow = Date.now(),
+    minutes,
+    seconds,
+    diff;
+
+  async function timerStatus() {
+    diff = duration - (((Date.now() - timenow) / 1000) | 0);
+
+    minutes = (diff / 60) | 0;
+    seconds = (diff / 60) | 0;
+
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    seconds = seconds < 10 ? "0" + seconds : seconds;
+
+    document.querySelector(".times").innerHTML =
+      " | " + minutes + "m " + seconds + "s ";
+    if (diff < 0) {
+      timenow = Date.now() + 1000;
+    }
+  }
+  timerStatus();
+  setInterval(timerStatus, 1000);
+}
+//countdownTimer(duration);
+
+function stel() {
+  var minute = 0;
+  var sec = 5;
+  var intervalID = setInterval(function () {
+    document.querySelector(".times").innerHTML = " | " + minute + " : " + sec;
+    sec--;
+
+    if (minute == 0 && sec <= 0) {
+      alert("Game Over!!!");
+      clearInterval(intervalID);
+      window.location.href = "GameOver.html";
+    }
+
+    if (sec == 00) {
+      minute--;
+      sec = 60;
+    }
+  }, 1000);
+}
+stel();

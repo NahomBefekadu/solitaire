@@ -193,3 +193,61 @@ body {
 .drag-over {
   opacity: 0.5;
 }
+
+.a1 {
+  margin-right: 2em;
+  font-family: "Roboto", sans-serif;
+  font-size: 2em;
+  height: 1.25em;
+  width: 4em;
+  color: #fff;
+  text-decoration: none;
+  background: linear-gradient(#7158e2, #cd84f1);
+  padding: 2px 6px 2px 6px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+}
+.a2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 2em;
+  height: 1.25em;
+  width: 5em;
+  color: #fff;
+  text-decoration: none;
+  background: linear-gradient(#e2e058, #4ddb22);
+  padding: 2px 6px 2px 6px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+}
+.a2:hover,
+.a1:hover {
+  opacity: 0.5;
+}
+.spad {
+  width: 0.6em;
+}
+
+.bottom_buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.bottom_status {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 100px;
+  width: 100%;
+}
+
+.bottom_scores {
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-size: 2em;
+  height: 1.25em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
