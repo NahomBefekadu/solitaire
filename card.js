@@ -104,3 +104,99 @@ async function resetCard() {
 
 console.log("waste");
 console.log(waste);
+
+/////////////////////////////////////////////////////////////////////
+/*
+const draggableElement = document.querySelectorAll("#move");
+const dropZone = document.querySelectorAll(".Column");
+
+draggableElement.forEach((element) =>
+  element.addEventListener("dragstart", (e) => {
+    element.classList.add("holding");
+    e.dataTransfer.setData("text/plain", element.classList);
+    console.log(e);
+    console.log(element.id);
+  })
+);
+// hovering over column
+dropZone.forEach((element) =>
+  element.addEventListener("dragover", (e) => {
+    e.preventDefault();
+    element.classList.add("drag-over", "selected");
+    console.log("hovering");
+  })
+);
+//leaving column zone
+dropZone.forEach((element) =>
+  element.addEventListener("dragleave", (e) => {
+    e.preventDefault();
+    element.classList.remove("drag-over", "selected");
+  })
+);
+//dropping into column
+dropZone.forEach((element) =>
+  element.addEventListener("drop", (e) => {
+    e.preventDefault();
+    const droppedEllementID = e.dataTransfer.getData(
+      "text/plain",
+      element.classList
+    );
+
+    const droppedEllement = document.getElementsByClassName(
+      `${droppedEllementID}`
+    )[0].id;
+
+    const finl = document.getElementById(droppedEllement);
+    console.log(droppedEllement);
+    console.log(finl);
+
+    element.appendChild(finl);
+    element.classList.remove("drag-over", "selected");
+    console.log("dropped");
+    console.log(droppedEllementID);
+  })
+);
+*/
+const nodes = document.getElementsByClassName("move");
+const DropZone = document.querySelectorAll(".Column");
+var selectedn = "";
+var selectednpos = 0;
+
+for (let i = 0; i < nodes.length; i++) {
+  nodes[i].addEventListener("dragstart", (e) => {
+    e.dataTransfer.setData("text/plain", e.target.id);
+    console.log("drag has started");
+  });
+}
+
+// hovering over column
+DropZone.forEach((element) =>
+  element.addEventListener("dragover", (e) => {
+    e.preventDefault();
+    element.classList.add("drag-over", "selected");
+    console.log("hovering");
+  })
+);
+//leaving column zone
+DropZone.forEach((element) =>
+  element.addEventListener("dragleave", (e) => {
+    e.preventDefault();
+    element.classList.remove("drag-over", "selected");
+  })
+);
+//dropping into column
+DropZone.forEach((element) =>
+  element.addEventListener("drop", (e) => {
+    e.preventDefault();
+    const droppedEllementID = e.dataTransfer.getData(
+      "text/plain",
+      element.classList
+    );
+    const finl = document.getElementById(droppedEllementID);
+    console.log(finl);
+    element.appendChild(finl);
+    element.classList.remove("drag-over", "selected");
+    console.log("dropped");
+    console.log(droppedEllementID);
+  })
+);
