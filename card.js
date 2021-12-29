@@ -10,7 +10,7 @@ const sleepNow = (delay) =>
   new Promise((resolve) => setTimeout(resolve, delay));
 
 createBoard();
-
+document.documentElement.setAttribute("data-theme", "light");
 async function createBoard() {
   //
 
@@ -65,9 +65,17 @@ function pickCard() {
   n++;
   var newNode = document.createElement("div");
   newNode.className = "discards";
+  newNode.id = `move${n + 30}`;
   newNode.style.backgroundImage = `url(${vs})`;
   newNode.style.backgroundSize = "164px 151px";
   document.getElementById("disc").appendChild(newNode);
+
+  /////
+  var k = document.getElementById("disc").lastElementChild;
+  k.classList.add("move");
+  k.draggable = true;
+
+  ///
 
   var list = document.getElementById("dd"); // Get the <ul> element with id="myList"
   list.removeChild(list.childNodes[0]);
@@ -150,7 +158,11 @@ function enableMute() {
   var audio = document.getElementById("audio");
   audio.muted = !audio.muted;
 }
-
+function lightChange() {
+  var currentTheme = document.documentElement.getAttribute("data-theme");
+  var switchToTheme = currentTheme === "dark" ? "light" : "dark";
+  document.documentElement.setAttribute("data-theme", switchToTheme);
+}
 /////////////////////////////////////////////////////////////////////
 /*
 const draggableElement = document.querySelectorAll("#move");
@@ -205,8 +217,10 @@ dropZone.forEach((element) =>
 */
 const nodes = document.getElementsByClassName("move");
 const DropZone = document.querySelectorAll(".Column");
+const TopZone = document.querySelector("#disc");
 var numMove = 0;
-
+console.log(TopZone.classList);
+console.log(DropZone.classList);
 for (let i = 0; i < nodes.length; i++) {
   nodes[i].addEventListener("dragstart", (e) => {
     e.dataTransfer.setData("text/plain", e.target.id);
