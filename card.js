@@ -125,6 +125,25 @@ function assignPlayableCards() {
   c5.style.backgroundImage = `url('/images/cards/${deck[arr[4]]}.svg')`;
   c6.style.backgroundImage = `url('/images/cards/${deck[arr[5]]}.svg')`;
   c7.style.backgroundImage = `url('/images/cards/${deck[arr[6]]}.svg')`;
+  let arr2 = [c1, c2, c3, c4, c5, c6, c7];
+  console.log(arr2[2]);
+  console.log("hello");
+  for (i = 0; i < arr.length; i++) {
+    let j = 1;
+    let chk = deck[arr[i]];
+    let myArray = chk[0].split("");
+    console.log(myArray[1]);
+
+    if (chk[0].includes("H") || chk[0].includes("D")) {
+      console.log("IT does contain heart");
+      arr2[i].classList.add("red");
+    } else {
+      arr2[i].classList.add("black");
+      console.log(chk[0]);
+      console.log("no");
+    }
+    j++;
+  }
 }
 assignPlayableCards();
 /////////////////////////////////////////////////////////////////////
@@ -214,15 +233,30 @@ DropZone.forEach((element) =>
       element.classList
     );
     const finl = document.getElementById(droppedEllementID);
+    console.log(element.lastElementChild);
     console.log(finl);
     console.log(element.style.width);
-    element.appendChild(finl);
+    if (
+      element.lastElementChild.classList.contains("red") &&
+      finl.classList.contains("red")
+    ) {
+      console.log("Invalid Move");
+    } else if (
+      element.lastElementChild.classList.contains("black") &&
+      finl.classList.contains("black")
+    ) {
+      console.log("Invalid Move");
+    } else {
+      console.log("valid Move");
+      element.appendChild(finl);
+      numMove++;
+    }
+
+    // element.appendChild(finl);
     element.classList.remove("drag-over", "selected");
     console.log("dropped");
     console.log(droppedEllementID);
-    numMove++;
     updateStatus();
-    element.style.width = "200px;";
   })
 );
 
