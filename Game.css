@@ -22,21 +22,28 @@ body {
   flex-direction: row;
   margin-left: 15em;
   margin-top: 2em;
+  flex-shrink: 0;
 }
 .Column {
   /*background-image: url("/images/placeHolder.svg");*/
   background-image: url("/images/placeHolder.svg");
-  width: 200px;
+  width: 100%;
+  min-width: 160px;
   height: 200px;
   margin: 10px;
 }
+
+.Column::after {
+  width: 200px;
+}
 .card2 {
-  background-image: url("/images/backImage.svg");
+  background-image: url("/images/BackImg.svg");
   display: inline-block;
+  object-fit: contain;
+  background-size: 160px 150px;
   width: 160px;
-  height: 200px;
-  margin-left: 10px;
-  margin-bottom: -12rem;
+  height: 150px;
+  margin-bottom: -9.84rem;
 }
 
 .topCards {
@@ -78,106 +85,26 @@ body {
   margin-top: 25px;
   margin-bottom: -10.84rem;
 }
-.cardZ {
-  background-image: url("/images/cards/C2.svg");
-  display: inline-block;
-  object-fit: contain;
-  background-size: 160px 150px;
-  width: 160px;
-  height: 150px;
-  margin-bottom: -9.84rem;
-}
-.cardZ1 {
-  background-image: url("/images/cards/H4.svg");
-  display: inline-block;
-  object-fit: contain;
-  background-size: 160px 150px;
-  width: 160px;
-  height: 150px;
-  margin-bottom: -9.84rem;
-}
-.cardZ2 {
-  background-image: url("/images/cards/C7.svg");
-  display: inline-block;
-  object-fit: contain;
-  background-size: 160px 150px;
-  width: 160px;
-  height: 150px;
-  margin-bottom: -9.84rem;
-}
-.cardZ3 {
-  background-image: url("/images/cards/D3.svg");
-  display: inline-block;
-  object-fit: contain;
-  background-size: 160px 150px;
-  width: 160px;
-  height: 150px;
-  margin-bottom: -9.84rem;
-}
-.cardZ4 {
-  background-image: url("/images/cards/DQ.svg");
-  display: inline-block;
-  object-fit: contain;
-  background-size: 160px 150px;
-  width: 160px;
-  height: 150px;
-  margin-bottom: -9.84rem;
-}
-.cardZ5 {
-  background-image: url("/images/cards/SA.svg");
-  display: inline-block;
-  object-fit: contain;
-  background-size: 160px 150px;
-  width: 160px;
-  height: 150px;
-  margin-bottom: -9.84rem;
-}
-.cardZ6 {
-  background-image: url("/images/cards/HK.svg");
-  display: inline-block;
-  object-fit: contain;
-  background-size: 160px 150px;
-  width: 160px;
-  height: 150px;
-  margin-bottom: -9.84rem;
-}
-.cardZ7 {
-  background-image: url("/images/cards/DJ.svg");
-  display: inline-block;
-  object-fit: contain;
-  background-size: 160px 150px;
-  width: 160px;
-  height: 150px;
-  margin-bottom: -9.84rem;
-}
-.cardZZ {
-  background-image: url("/images/cards/CA.svg");
-  display: inline-block;
-  object-fit: contain;
-  background-size: 160px 150px;
-  width: 160px;
-  height: 150px;
-  margin-bottom: -9.84rem;
-}
-.heart {
+
+#heart {
   background-image: url("/images/heartBig.svg");
   width: 160px;
   height: 210px;
   margin: 10px;
 }
-.club {
+#club {
   background-image: url("/images/clubBig.svg");
   width: 160px;
   height: 210px;
   margin: 10px;
 }
-.spade {
+#spade {
   background-image: url("/images/spadeBig.svg");
   width: 160px;
   height: 210px;
   margin: 10px;
 }
-.diamond {
+#diamond {
   background-image: url("/images/diamondBig.svg");
   width: 160px;
   height: 210px;

@@ -104,7 +104,29 @@ async function resetCard() {
 
 console.log("waste");
 console.log(waste);
-
+////////////////////////////////////////////////////////////////////////////////////////////////
+function assignPlayableCards() {
+  var c1 = document.getElementById("col1").lastElementChild;
+  var c2 = document.getElementById("col2").lastElementChild;
+  var c3 = document.getElementById("col3").lastElementChild;
+  var c4 = document.getElementById("col4").lastElementChild;
+  var c5 = document.getElementById("col5").lastElementChild;
+  var c6 = document.getElementById("col6").lastElementChild;
+  var c7 = document.getElementById("col7").lastElementChild;
+  var arr = [];
+  while (arr.length < 7) {
+    var r = Math.floor(Math.random() * 24) + 1;
+    if (arr.indexOf(r) === -1) arr.push(r);
+  }
+  c1.style.backgroundImage = `url('/images/cards/${deck[arr[0]]}.svg')`;
+  c2.style.backgroundImage = `url('/images/cards/${deck[arr[1]]}.svg')`;
+  c3.style.backgroundImage = `url('/images/cards/${deck[arr[2]]}.svg')`;
+  c4.style.backgroundImage = `url('/images/cards/${deck[arr[3]]}.svg')`;
+  c5.style.backgroundImage = `url('/images/cards/${deck[arr[4]]}.svg')`;
+  c6.style.backgroundImage = `url('/images/cards/${deck[arr[5]]}.svg')`;
+  c7.style.backgroundImage = `url('/images/cards/${deck[arr[6]]}.svg')`;
+}
+assignPlayableCards();
 /////////////////////////////////////////////////////////////////////
 /*
 const draggableElement = document.querySelectorAll("#move");
@@ -193,12 +215,14 @@ DropZone.forEach((element) =>
     );
     const finl = document.getElementById(droppedEllementID);
     console.log(finl);
+    console.log(element.style.width);
     element.appendChild(finl);
     element.classList.remove("drag-over", "selected");
     console.log("dropped");
     console.log(droppedEllementID);
     numMove++;
     updateStatus();
+    element.style.width = "200px;";
   })
 );
 
@@ -235,7 +259,7 @@ function countdownTimer(duration) {
 //countdownTimer(duration);
 
 function stel() {
-  var minute = 0;
+  var minute = 10;
   var sec = 5;
   var intervalID = setInterval(function () {
     document.querySelector(".times").innerHTML = " | " + minute + " : " + sec;
