@@ -146,6 +146,11 @@ function assignPlayableCards() {
   }
 }
 assignPlayableCards();
+function enableMute() {
+  var audio = document.getElementById("audio");
+  audio.muted = !audio.muted;
+}
+
 /////////////////////////////////////////////////////////////////////
 /*
 const draggableElement = document.querySelectorAll("#move");

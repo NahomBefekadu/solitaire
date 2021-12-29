@@ -137,6 +137,7 @@ body {
 }
 .a2 {
   font-family: "Roboto", sans-serif;
+  margin-right: 2em;
   font-size: 2em;
   height: 1.25em;
   width: 5em;
@@ -148,6 +149,21 @@ body {
   display: flex;
   justify-content: space-between;
 }
+
+.a3 {
+  font-family: "Roboto", sans-serif;
+  font-size: 2em;
+  height: 1.25em;
+  width: 7.4em;
+  color: #fff;
+  text-decoration: none;
+  background: linear-gradient(#df2403, #9774ad);
+  padding: 2px 6px 2px 6px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+}
+.a3:hover,
 .a2:hover,
 .a1:hover {
   opacity: 0.5;

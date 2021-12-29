@@ -126,13 +126,17 @@
           >Go Back
           <img class="spad" src="/images/spade.svg" />
         </a>
+        <a class="a3" href="#" onclick="enableMute()"
+          >On/Off Audio
+          <img class="spad" src="/images/spade.svg" />
+        </a>
       </div>
       <div class="bottom_scores">
         <h3 class="moves"></h3>
         <h3 id="timer" class="times"></h3>
       </div>
     </div>
-    <script src="card.js"></script>
+    <script type="text/javascript" src="card.js"></script>
     <!--     <embed
       src="/music/Pixel-Drama.mp3"
       loop="true"
@@ -140,8 +144,8 @@
       width="2"
       height="0"
     /> -->
-    <audio loop autoplay>
-      <source src="/music/Pixel-Drama.mp3" type="audio/mp3" />
+    <audio id="audio" loop autoplay>
+      <source id="audios" src="/music/Pixel-Drama.mp3" type="audio/mp3" />
       Your browser does not support the audio element.
     </audio>
   </body>
