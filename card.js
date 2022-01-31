@@ -284,6 +284,7 @@ movesDone.innerHTML = `${numMove} Moves`;
 async function updateStatus() {
   movesDone.innerHTML = `${numMove} Moves`;
 }
+
 var duration = 1800;
 function countdownTimer(duration) {
   var timenow = Date.now(),
@@ -310,16 +311,17 @@ function countdownTimer(duration) {
   setInterval(timerStatus, 1000);
 }
 //countdownTimer(duration);
-
+var minute = 30;
+var sec = 60;
+var minute2 = 0;
+var sec2 = 0;
 function stel() {
-  var minute = 10;
-  var sec = 5;
   var intervalID = setInterval(function () {
     document.querySelector(".times").innerHTML = " | " + minute + " : " + sec;
     sec--;
 
     if (minute == 0 && sec <= 0) {
-      alert("Game Over!!!");
+      //alert("Game Over!!!");
       clearInterval(intervalID);
       window.location.href = "GameOver.html";
     }
@@ -328,6 +330,36 @@ function stel() {
       minute--;
       sec = 60;
     }
+    minute2 = minute;
+    sec2 = sec;
+    console.log(minute2, sec2);
   }, 1000);
 }
+function pause() {
+  var minute = 30;
+  var sec = 60;
+  var minute2 = 0;
+  var sec2 = 0;
+  function stels() {
+    var intervalID = setInterval(function () {
+      document.querySelector(".times").innerHTML = " | " + minute + " : " + sec;
+      sec--;
+
+      if (minute == 0 && sec <= 0) {
+        //alert("Game Over!!!");
+        clearInterval(intervalID);
+        window.location.href = "GameOver.html";
+      }
+
+      if (sec == 00) {
+        minute--;
+        sec = 60;
+      }
+      minute2 = minute;
+      sec2 = sec;
+      console.log(minute2, sec2);
+    }, 1000);
+  }
+}
+
 stel();
