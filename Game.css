@@ -32,9 +32,9 @@ body {
   margin-top: 2em;
   flex-shrink: 0;
 }
-/* .Column {
+.Column {
 
-  background-image: url("/images/placeHolder.svg");
+  
   width: 100%;
   min-width: 160px;
   height: 200px;
@@ -43,7 +43,7 @@ body {
 
 .Column::after {
   width: 200px;
-} */
+} 
 .card2 {
   background-image: url("/images/BackImg.svg");
   display: inline-block;
