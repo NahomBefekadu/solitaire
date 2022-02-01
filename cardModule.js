@@ -146,6 +146,7 @@ async function addMainBoard() {
   let vs1 = `/images/cards/${x1.dataset.name}.svg`;
   x1.style.backgroundImage = `url(${vs1})`;
   x1.draggable = true;
+  x1.setAttribute("id", x1.dataset.name);
   //---------------------------------------------------------
 
   //col 2
@@ -154,6 +155,7 @@ async function addMainBoard() {
   let vs2 = `/images/cards/${x2.dataset.name}.svg`;
   x2.style.backgroundImage = `url(${vs2})`;
   x2.draggable = true;
+  x2.setAttribute("id", x2.dataset.name);
   //---------------------------------------------------------
 
   //col 3
@@ -161,15 +163,26 @@ async function addMainBoard() {
   x3.dataset.status = 1;
   let vs3 = `/images/cards/${x3.dataset.name}.svg`;
   x3.style.backgroundImage = `url(${vs3})`;
+<<<<<<< HEAD
   x3.draggable = true;
   //---------------------------------------------------------
+=======
+  x3.draggable = true; 
+  x3.setAttribute("id", x3.dataset.name);
+ //---------------------------------------------------------
+>>>>>>> f9f8bfe38ba99e7efa2cad6d92f2fad74b961b00
 
   //col 4
   var x4 = document.getElementById("col4").lastChild;
   x4.dataset.status = 1;
   let vs4 = `/images/cards/${x4.dataset.name}.svg`;
   x4.style.backgroundImage = `url(${vs4})`;
+<<<<<<< HEAD
   x4.draggable = true;
+=======
+  x4.draggable = true; 
+  x4.setAttribute("id", x4.dataset.name);
+>>>>>>> f9f8bfe38ba99e7efa2cad6d92f2fad74b961b00
   //---------------------------------------------------------
 
   //col 5
@@ -177,7 +190,12 @@ async function addMainBoard() {
   x5.dataset.status = 1;
   let vs5 = `/images/cards/${x5.dataset.name}.svg`;
   x5.style.backgroundImage = `url(${vs5})`;
+<<<<<<< HEAD
   x5.draggable = true;
+=======
+  x5.draggable = true; 
+  x5.setAttribute("id", x5.dataset.name);
+>>>>>>> f9f8bfe38ba99e7efa2cad6d92f2fad74b961b00
   //---------------------------------------------------------
 
   //col 6
@@ -186,6 +204,10 @@ async function addMainBoard() {
   let vs6 = `/images/cards/${x6.dataset.name}.svg`;
   x6.style.backgroundImage = `url(${vs6})`;
   x6.draggable = true;
+<<<<<<< HEAD
+=======
+  x6.setAttribute("id", x6.dataset.name);
+>>>>>>> f9f8bfe38ba99e7efa2cad6d92f2fad74b961b00
   //---------------------------------------------------------
 
   //col 7
@@ -193,5 +215,11 @@ async function addMainBoard() {
   x7.dataset.status = 1;
   let vs7 = `/images/cards/${x7.dataset.name}.svg`;
   x7.style.backgroundImage = `url(${vs7})`;
+<<<<<<< HEAD
   x7.draggable = true;
 }
+=======
+  x7.draggable = true; 
+  x7.setAttribute("id", x7.dataset.name);
+}
+>>>>>>> f9f8bfe38ba99e7efa2cad6d92f2fad74b961b00
