@@ -1,4 +1,3 @@
-
 const nodes = document.getElementsByClassName("Column");
 const DropZone = document.querySelectorAll(".Column");
 const TopZone = document.querySelector("#disc");
@@ -31,15 +30,15 @@ DropZone.forEach((element) =>
 DropZone.forEach((element) =>
   element.addEventListener("drop", (e) => {
     e.preventDefault();
-    const droppedEllementID = e.dataTransfer.getData(
-      "text/plain",
-      e.classList
-    );
-    console.log(" element id " + droppedEllementID +" element id");
+    const droppedEllementID = e.dataTransfer.getData("text/plain", e.classList);
+    console.log(" element id " + droppedEllementID + " element id");
     const finl = document.getElementById(droppedEllementID);
     console.log(element.lastElementChild);
     console.log(finl);
     console.log(element.style.width);
+    console.log("uim here");
+    finl.classList.remove("topy");
+    console.log(finl.classList);
     if (
       element.lastElementChild.classList.contains("red") &&
       finl.classList.contains("red")
