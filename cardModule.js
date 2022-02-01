@@ -1,8 +1,8 @@
-let suits = ["H", "C", "D", "S"];
-let ranks = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"];
+let suitss = ["H", "C", "D", "S"];
+let rankss = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"];
 
 let starterDeck = [];
-let waste = [];
+let wastee = [];
 let c1 = [];
 let c2 = [];
 let c3 = [];
@@ -16,15 +16,15 @@ let c7 = [];
 for (let i = 0; i < 4; i++) {
   for (let j = 0; j < 13; j++) {
     starterDeck.push({
-      name: [suits[i] + ranks[j]],
+      name: [suitss[i] + rankss[j]],
       status: 0,
-      rank: ranks[j],
-      suit: suits[i],
+      rank: rankss[j],
+      suit: suitss[i],
     });
   }
 }
 
-let ShuffleDeck = function (DCK) {
+let ShuffleDeckk = function (DCK) {
   let var1, tmp;
 
   for (let i = DCK.length - 1; i > 0; i--) {
@@ -36,7 +36,7 @@ let ShuffleDeck = function (DCK) {
   return DCK;
 };
 
-ShuffleDeck(starterDeck);
+ShuffleDeckk(starterDeck);
 
 let insertCard = function (i, crd = []) {
   for (var j = 0; j < i; j++) {
@@ -50,22 +50,88 @@ insertCard(4, c4);
 insertCard(3, c3);
 insertCard(2, c2);
 insertCard(1, c1);
-insertCard(24, waste);
+insertCard(24, wastee);
 
-module.exports = {
-  c1,
-  c2,
-  c3,
-  c4,
-  c5,
-  c6,
-  c7,
-  waste,
-};
+/*----------------Top card creation-----------------------------------*/
+console.log(wastee);
+createBoard();
+async function createBoard() {
+  await sleepNow(30);
+  wastee.map((obj) => {
+    var newNode = document.createElement("div");
+    newNode.className = "topCards";
+    newNode.dataset.name = obj.name;
+    newNode.dataset.rank = obj.rank;
+    newNode.dataset.suit = obj.suit;
+    newNode.dataset.status = obj.status;
+    document.getElementById("dd").appendChild(newNode);
+  });
+}
 
-/*
-way to require modules
-const { c1, c2, c3, c4, c5, c6, c7, waste } = require("./Card");
-console.log(c2);
- 
-*/
+/*-------------------------Main Card Creation-----------------------------*/
+createMainBoard();
+async function createMainBoard() {
+  c1.map((obj) => {
+    var newNode = document.createElement("div");
+    newNode.className = "card2";
+    newNode.dataset.name = obj.name;
+    newNode.dataset.rank = obj.rank;
+    newNode.dataset.suit = obj.suit;
+    newNode.dataset.status = obj.status;
+    document.getElementById("col1").appendChild(newNode);
+  });
+  c2.map((obj) => {
+    var newNode = document.createElement("div");
+    newNode.className = "card2";
+    newNode.dataset.name = obj.name;
+    newNode.dataset.rank = obj.rank;
+    newNode.dataset.suit = obj.suit;
+    newNode.dataset.status = obj.status;
+    document.getElementById("col2").appendChild(newNode);
+  });
+  c3.map((obj) => {
+    var newNode = document.createElement("div");
+    newNode.className = "card2";
+    newNode.dataset.name = obj.name;
+    newNode.dataset.rank = obj.rank;
+    newNode.dataset.suit = obj.suit;
+    newNode.dataset.status = obj.status;
+    document.getElementById("col3").appendChild(newNode);
+  });
+  c4.map((obj) => {
+    var newNode = document.createElement("div");
+    newNode.className = "card2";
+    newNode.dataset.name = obj.name;
+    newNode.dataset.rank = obj.rank;
+    newNode.dataset.suit = obj.suit;
+    newNode.dataset.status = obj.status;
+    document.getElementById("col4").appendChild(newNode);
+  });
+  c5.map((obj) => {
+    var newNode = document.createElement("div");
+    newNode.className = "card2";
+    newNode.dataset.name = obj.name;
+    newNode.dataset.rank = obj.rank;
+    newNode.dataset.suit = obj.suit;
+    newNode.dataset.status = obj.status;
+    document.getElementById("col5").appendChild(newNode);
+  });
+  c6.map((obj) => {
+    var newNode = document.createElement("div");
+    newNode.className = "card2";
+    newNode.dataset.name = obj.name;
+    newNode.dataset.rank = obj.rank;
+    newNode.dataset.suit = obj.suit;
+    newNode.dataset.status = obj.status;
+    document.getElementById("col6").appendChild(newNode);
+  });
+  c7.map((obj) => {
+    var newNode = document.createElement("div");
+    newNode.className = "card2";
+    newNode.dataset.name = obj.name;
+    newNode.dataset.rank = obj.rank;
+    newNode.dataset.suit = obj.suit;
+    newNode.dataset.status = obj.status;
+    document.getElementById("col7").appendChild(newNode);
+  });
+}

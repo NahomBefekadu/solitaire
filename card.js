@@ -1,3 +1,5 @@
+/*--------------------------------------------------------------------------------------------------- */
+
 let suits = ["H", "C", "D", "S"];
 let ranks = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"];
 let deck = [];
@@ -9,9 +11,9 @@ let joe = 0;
 const sleepNow = (delay) =>
   new Promise((resolve) => setTimeout(resolve, delay));
 
-createBoard();
+//createBoard();
 document.documentElement.setAttribute("data-theme", "light");
-async function createBoard() {
+/* async function createBoard() {
   //
 
   for (let j = 0; j < 21; j++) {
@@ -21,7 +23,7 @@ async function createBoard() {
     document.getElementById("dd").appendChild(newNode);
     //await sleepNow(1);
   }
-}
+} */
 
 for (let i = 0; i < 4; i++) {
   for (let j = 0; j < 13; j++) {
@@ -58,7 +60,7 @@ console.log("topDeck2");
 console.log(topDeck);
 let n = 0;
 
-function pickCard() {
+/* function pickCard() {
   waste.push(topDeck2.shift());
   console.log("picture is :" + waste[0 + n] + "number : " + n);
   let vs = `/images/cards/${waste[0 + n]}.svg`;
@@ -86,7 +88,7 @@ function pickCard() {
     resetCard();
   }
 }
-
+ */
 async function resetCard() {
   //
   for (let j = 0; j < waste.length; j++) {
@@ -113,7 +115,7 @@ async function resetCard() {
 console.log("waste");
 console.log(waste);
 ////////////////////////////////////////////////////////////////////////////////////////////////
-function assignPlayableCards() {
+/* function assignPlayableCards() {
   var c1 = document.getElementById("col1").lastElementChild;
   var c2 = document.getElementById("col2").lastElementChild;
   var c3 = document.getElementById("col3").lastElementChild;
@@ -153,7 +155,10 @@ function assignPlayableCards() {
     j++;
   }
 }
-assignPlayableCards();
+assignPlayableCards(); */
+
+/*--------------------------------------------------------- */
+
 function enableMute() {
   var audio = document.getElementById("audio");
   audio.muted = !audio.muted;
@@ -332,7 +337,7 @@ function stel() {
     }
     minute2 = minute;
     sec2 = sec;
-    console.log(minute2, sec2);
+    // console.log(minute2, sec2);
   }, 1000);
 }
 function pause() {
