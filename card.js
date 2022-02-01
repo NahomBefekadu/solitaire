@@ -293,7 +293,7 @@ async function updateStatus() {
   movesDone.innerHTML = `${numMove} Moves`;
 }
 */
-var duration = 1800;
+/* var duration = 1800;
 function countdownTimer(duration) {
   var timenow = Date.now(),
     minutes,
@@ -370,4 +370,4 @@ function pause() {
   }
 }
 
-stel();
+stel(); */
