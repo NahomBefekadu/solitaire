@@ -91,7 +91,7 @@
 
     <div class="bottom_status">
       <div class="bottom_buttons">
-        <a class="a1" href="Game.html"
+        <a class="a4" href="Game.html"
           >Reset
           <img class="spad" src="/images/spade.svg" />
         </a>
@@ -99,10 +99,30 @@
           >Go Back
           <img class="spad" src="/images/spade.svg" />
         </a>
-        <a class="a4" onclick="pause()" href="#"
+        <!-- <a class="a4" onclick="pause()" href="#"
           >pause
           <img class="spad" src="/images/spade.svg" />
-        </a>
+        </a> -->
+        <body>
+         
+      <!-- <button class="a2" id="start">Start 
+        <img class="spad" src="/images/spade.svg" /> -->
+
+      </button>
+      <button class="a4" id="pause" 
+      >Pause 
+        <img class="spad" src="/images/spade.svg" />
+      </button>
+      <button 
+      class="a2" id="resume"
+      
+      >Resume 
+        <img class="spad" src="/images/spade.svg" />
+        
+      </button>
+      
+      
+      </body>
         <a class="a3" href="#" onclick="enableMute()"
           >On/Off Audio
           <img class="spad" src="/images/spade.svg" />
@@ -114,9 +134,68 @@
       </div>
       <div class="bottom_scores">
         <h3 class="moves"></h3>
-        <h3 id="timer" class="times"></h3>
+        <!-- <h3 class="times" id="timer">30:00</h3> -->
+        <!-- <h3 id="timer" class="times"></h3> -->
+  
       </div>
+      <h3 class="bottom_scores" id="timer">30:00</h3>
+
+
+
+      <script>
+        var timer = document.getElementById("timer");
+    var start = document.getElementById("start");
+    var pause = document.getElementById("pause");
+    var resume = document.getElementById("resume");
+    var id;
+    var value = "30:00";
+    startTimer(30, 00);
+    function startTimer(m, s) {
+        timer.textContent = m + ":" + s;
+        if (s == 0) {
+            if (m == 0) {
+                return;
+            } else if (m != 0) {
+                m = m - 1;
+                s = 60;
+            }
+        }
+    
+        s = s - 1;
+        id = setTimeout(function () {
+            startTimer(m, s)
+        }, 1000);
+    }
+    
+    function pauseTimer() {
+        value = timer.textContent;
+        clearTimeout(id);
+       
+    }
+    
+    function resumeTimer() {
+        var t = value.split(":");
+    
+        startTimer(parseInt(t[0], 10), parseInt(t[1], 10));
+    }
+    
+    // start.addEventListener("click", function () {
+    //     startTimer(30, 00);
+    // }, false);
+    
+    pause.addEventListener("click", pauseTimer, false);
+   
+    resume.addEventListener("click", resumeTimer, false);
+    </script>
     </div>
+
+
+
+
+
+
+
+
     <script type="text/javascript" src="card.js"></script>
     <script type="text/javascript" src="cardModule.js"></script>
     <script type="text/javascript" src="topCardMove.js"></script>
