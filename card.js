@@ -220,7 +220,7 @@ dropZone.forEach((element) =>
   })
 );
 */
-
+//-----------------------------------------------------------------------------------------------
 /*
 const nodes = document.getElementsByClassName("move");
 const DropZone = document.querySelectorAll(".Column");
