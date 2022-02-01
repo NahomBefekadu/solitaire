@@ -32,8 +32,8 @@ body {
   margin-top: 2em;
   flex-shrink: 0;
 }
-.Column {
-  /*background-image: url("/images/placeHolder.svg");*/
+/* .Column {
+
   background-image: url("/images/placeHolder.svg");
   width: 100%;
   min-width: 160px;
@@ -43,7 +43,7 @@ body {
 
 .Column::after {
   width: 200px;
-}
+} */
 .card2 {
   background-image: url("/images/BackImg.svg");
   display: inline-block;
@@ -53,10 +53,19 @@ body {
   height: 150px;
   margin-bottom: -9.84rem;
 }
+.topy {
+  display: block;
+  object-fit: contain;
+  width: 160px;
+  height: 203px;
+  margin-left: 10px;
+  background-repeat: no-repeat;
+  margin-bottom: -12.6rem;
+}
 
 .topCards {
   background-image: url("/images/backImage.svg");
-
+  object-fit: contain;
   width: 160px;
   height: 200px;
   margin-left: 10px;
@@ -79,12 +88,13 @@ body {
   margin: 10px;
 }
 
-.waste {
+/* .waste {
   background-image: url("/images/placeHolder.svg");
-  width: 150px;
+  width: 160px;
   height: 200px;
-  margin: 10px;
-}
+  margin-left: 10px;
+  margin-bottom: -12.4rem;
+} */
 
 .discards {
   width: 160px;
@@ -95,25 +105,25 @@ body {
 }
 
 #heart {
-  background-image: url("/images/heartBig.svg");
+  background-image: url("/images/backsplash.svg");
   width: 160px;
   height: 210px;
   margin: 10px;
 }
 #club {
-  background-image: url("/images/clubBig.svg");
+  background-image: url("/images/backsplash.svg");
   width: 160px;
   height: 210px;
   margin: 10px;
 }
 #spade {
-  background-image: url("/images/spadeBig.svg");
+  background-image: url("/images/backsplash.svg");
   width: 160px;
   height: 210px;
   margin: 10px;
 }
 #diamond {
-  background-image: url("/images/diamondBig.svg");
+  background-image: url("/images/backsplash.svg");
   width: 160px;
   height: 210px;
   margin: 10px;

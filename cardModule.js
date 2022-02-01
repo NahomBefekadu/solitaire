@@ -59,7 +59,7 @@ async function createBoard() {
   await sleepNow(30);
   wastee.map((obj) => {
     var newNode = document.createElement("div");
-    newNode.className = "topCards";
+    newNode.className = "card2 topy";
     newNode.dataset.name = obj.name;
     newNode.dataset.rank = obj.rank;
     newNode.dataset.suit = obj.suit;
@@ -156,42 +156,42 @@ async function addMainBoard() {
   x2.draggable = true;
   //---------------------------------------------------------
 
-  //col 3 
+  //col 3
   var x3 = document.getElementById("col3").lastChild;
   x3.dataset.status = 1;
   let vs3 = `/images/cards/${x3.dataset.name}.svg`;
   x3.style.backgroundImage = `url(${vs3})`;
-  x3.draggable = true; 
- //---------------------------------------------------------
+  x3.draggable = true;
+  //---------------------------------------------------------
 
-  //col 4 
+  //col 4
   var x4 = document.getElementById("col4").lastChild;
   x4.dataset.status = 1;
   let vs4 = `/images/cards/${x4.dataset.name}.svg`;
   x4.style.backgroundImage = `url(${vs4})`;
-  x4.draggable = true; 
+  x4.draggable = true;
   //---------------------------------------------------------
 
-  //col 5 
+  //col 5
   var x5 = document.getElementById("col5").lastChild;
   x5.dataset.status = 1;
   let vs5 = `/images/cards/${x5.dataset.name}.svg`;
   x5.style.backgroundImage = `url(${vs5})`;
-  x5.draggable = true; 
+  x5.draggable = true;
   //---------------------------------------------------------
 
-  //col 6 
+  //col 6
   var x6 = document.getElementById("col6").lastChild;
   x6.dataset.status = 1;
   let vs6 = `/images/cards/${x6.dataset.name}.svg`;
   x6.style.backgroundImage = `url(${vs6})`;
-  x6.draggable = true; 
+  x6.draggable = true;
   //---------------------------------------------------------
 
-  //col 7 
+  //col 7
   var x7 = document.getElementById("col7").lastChild;
   x7.dataset.status = 1;
   let vs7 = `/images/cards/${x7.dataset.name}.svg`;
   x7.style.backgroundImage = `url(${vs7})`;
-  x7.draggable = true; 
+  x7.draggable = true;
 }
