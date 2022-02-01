@@ -37,7 +37,9 @@ DropZone.forEach((element) =>
     console.log(finl);
     console.log(element.style.width);
     console.log("uim here");
-    finl.classList.remove("topy");
+    if (finl.classList.contains("topy")) {
+      finl.classList.remove("topy");
+    }
     console.log(finl.classList);
     if (
       element.lastElementChild.classList.contains("red") &&
