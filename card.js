@@ -220,6 +220,8 @@ dropZone.forEach((element) =>
   })
 );
 */
+
+/*
 const nodes = document.getElementsByClassName("move");
 const DropZone = document.querySelectorAll(".Column");
 const TopZone = document.querySelector("#disc");
@@ -254,8 +256,9 @@ DropZone.forEach((element) =>
     e.preventDefault();
     const droppedEllementID = e.dataTransfer.getData(
       "text/plain",
-      element.classList
+      e.classList
     );
+    console.log(" element id " + droppedEllementID +" element id");
     const finl = document.getElementById(droppedEllementID);
     console.log(element.lastElementChild);
     console.log(finl);
@@ -289,7 +292,7 @@ movesDone.innerHTML = `${numMove} Moves`;
 async function updateStatus() {
   movesDone.innerHTML = `${numMove} Moves`;
 }
-
+*/
 var duration = 1800;
 function countdownTimer(duration) {
   var timenow = Date.now(),
