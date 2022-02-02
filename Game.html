@@ -30,11 +30,11 @@
         </div>
         <div class="decks">
           <div id="heart" class="Column">
-            <div class="emty"></div>
+            <div class="emty" id="win"></div>
           </div>
-          <div id="spade" class="Column"><div class="emty"></div></div>
-          <div id="club" class="Column"><div class="emty"></div></div>
-          <div id="diamond" class="Column"><div class="emty"></div></div>
+          <div id="spade" class="Column"><div class="emty" id="win"></div></div>
+          <div id="club" class="Column"><div class="emty" id="win"></div></div>
+          <div id="diamond" class="Column"><div class="emty" id="win"></div></div>
           <!--           <img src="/images/heartBig.svg" />
           <img src="/images/spadeBig.svg" />
           <img src="/images/clubBig.svg" />
@@ -101,7 +101,7 @@
           >Reset
           <img class="spad" src="/images/spade.svg" />
         </a>
-        <a class="a2" href="#"
+        <a class="a2" href="#" onclick="goBack();"
           >Go Back
           <img class="spad" src="/images/spade.svg" />
         </a>
