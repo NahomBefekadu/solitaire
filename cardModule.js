@@ -59,6 +59,7 @@ async function createBoard() {
   await sleepNow(30);
   wastee.map((obj) => {
     var newNode = document.createElement("div");
+    var container = document.createElement("div");
     newNode.className = "card2 topy";
     newNode.dataset.name = obj.name;
     newNode.dataset.rank = obj.rank;

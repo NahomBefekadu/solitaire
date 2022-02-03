@@ -278,7 +278,9 @@ body {
 .swTog {
   display: flex;
 }
-
+.Compress {
+  margin: 0;
+}
 /* Hide default HTML checkbox */
 .switch input {
   opacity: 0;
