@@ -6,6 +6,126 @@ const movesHistory = [];
 var numMove = 0;
 console.log(TopZone.classList);
 console.log(DropZone.classList);
+
+for (let i = 0; i < nodes.length; i++) {
+  nodes[i].addEventListener("dblclick", (e) => {
+    //e.dataTransfer.setData("text/plain", e.target.id);
+    
+    const choosen = nodes[i].lastElementChild.id;
+    console.log("double click has started" + choosen);
+
+    var col1 = document.getElementById("col1").lastElementChild.id;
+    var col2 = document.getElementById("col2").lastElementChild.id;
+    var col3 = document.getElementById("col3").lastElementChild.id;
+    var col4 = document.getElementById("col4").lastElementChild.id;
+    var col5 = document.getElementById("col5").lastElementChild.id;
+    var col6 = document.getElementById("col6").lastElementChild.id;
+    var col7 = document.getElementById("col7").lastElementChild.id;
+    var heart = document.getElementById("heart").lastElementChild.id;
+    var spade = document.getElementById("spade").lastElementChild.id;
+    var club = document.getElementById("club").lastElementChild.id;
+    var diamond = document.getElementById("diamond").lastElementChild.id;
+    
+    console.log(" element id " + col1 +", " +col2+", " +col3+", " +col4+", " +col5+", " +col6+", " +col7 );
+
+    let choosenSuit = choosen.charAt(0);
+    let choosenNum = choosen.charAt(1) + choosen.charAt(2);
+    console.log(" chosen suite " + choosenSuit +", chosen value " +choosenNum );
+    var whereto = "";
+    if(doubleClickMove(choosen, col1)==true){ 
+      moveit(choosen, "col1");
+    }; 
+    if(doubleClickMove(choosen, col2)==true){
+      var col2 = document.getElementById("col2").lastElementChild;
+      moveit(choosen, "col2");
+    };
+    
+    if(doubleClickMove(choosen, col3)==true){
+      var col3 = document.getElementById("col3").lastElementChild;
+      moveit(choosen, "col3");
+    };
+     
+    if(doubleClickMove(choosen, col4)==true){
+      var col4 = document.getElementById("col4").lastElementChild;
+      moveit(choosen, "col4");
+    };
+    
+    if(doubleClickMove(choosen, col5)==true){
+      var col5 = document.getElementById("col5").lastElementChild;
+      moveit(choosen, "col5");
+    };
+     
+    if(doubleClickMove(choosen, col6)==true){
+      var col6 = document.getElementById("col6").lastElementChild;
+      moveit(choosen, "col6");
+    };
+     
+    if(doubleClickMove(choosen, col7)==true){
+      var col7 = document.getElementById("col7").lastElementChild;
+      moveit(choosen, "col7");
+    }; 
+
+    if(goForIt(choosen, heart, "win")==true){
+      var heart = document.getElementById("heart").lastElementChild;
+      moveit(choosen, "heart");
+    };
+ 
+    if(goForIt(choosen, spade, "win")==true){
+      var spade = document.getElementById("spade").lastElementChild;
+      moveit(choosen, "spade");
+    };
+ 
+    if(goForIt(choosen, club, "win")==true){
+      var club = document.getElementById("club").lastElementChild;
+      moveit(choosen, "club");
+    };   
+    if(goForIt(choosen, diamond, "win")==true){
+      var diamond = document.getElementById("diamond").lastElementChild;
+      moveit(choosen, "diamond");
+    };
+ 
+    
+  });
+}
+
+function moveit(param1, param2){
+  //console.log("where to " + document.getElementById(param2).classList);
+  
+  numMove ++;
+  movesDone.innerHTML = `${numMove} Moves`;
+  console.log("moves are " + numMove); 
+  if (document.getElementById(param1).classList.contains("topy")) {
+    console.log("found topy");
+    document.getElementById(param1).classList.remove("topy");
+    console.log("topy removed");
+  }
+
+  if (param2 === "heart") {
+    console.log("Topy added");
+    document.getElementById(param1).classList.add("topy");
+  }
+  if (param2 === "spade") {
+    console.log("Topy added");
+    document.getElementById(param1).classList.add("topy");
+  }
+  if (param2 === "diamond") {
+    console.log("Topy added");
+    document.getElementById(param1).classList.add("topy");
+  }
+  if (param2 === "club") {
+    console.log("Topy added");
+    document.getElementById(param1).classList.add("topy");
+  }
+  
+  document.getElementById(param2).appendChild(document.getElementById(param1));
+  //param2.classList.remove("drag-over", "selected");
+   console.log("dropped");
+   //console.log(droppedEllementID);
+   updateStatus();
+
+
+}
+
 for (let i = 0; i < nodes.length; i++) {
   nodes[i].addEventListener("dragstart", (e) => {
     e.dataTransfer.setData("text/plain", e.target.id);
@@ -275,3 +395,135 @@ function goForIt(param1, param2, param3) {
     }
   }
 }
+
+function doubleClickMove(param1, param2 ) {
+  let param1Suit = param1.charAt(0);
+  let param1Num = param1.charAt(1) + param1.charAt(2);
+  let param2Suit = param2.charAt(0);
+  let param2Num = param2.charAt(1) + param2.charAt(2); 
+
+  //check color
+  let colorFrom = "";
+  let colorTo = "";
+
+  switch (param1Suit) {
+    case "H":
+      colorFrom = "red";
+      break;
+    case "D":
+      colorFrom = "red";
+      break;
+    case "S":
+      colorFrom = "black";
+      break;
+    case "C":
+      colorFrom = "black";
+      break;
+  }
+
+  switch (param2Suit) {
+    case "H":
+      colorTo = "red";
+      break;
+    case "D":
+      colorTo = "red";
+      break;
+    case "S":
+      colorTo = "black";
+      break;
+    case "C":
+      colorTo = "black";
+      break;
+  }
+
+  //console.log("color from is " + colorFrom + ", color to is " + colorTo);
+
+  //check value
+
+  switch (param1Num) {
+    case "J":
+      param1Num = 11;
+      break;
+    case "Q":
+      param1Num = 12;
+      break;
+    case "K":
+      param1Num = 13;
+      break;
+    case "A":
+      param1Num = 1;
+      break;
+  }
+
+  switch (param2Num) {
+    case "J":
+      param2Num = 11;
+      break;
+    case "Q":
+      param2Num = 12;
+      break;
+    case "K":
+      param2Num = 13;
+      break;
+    case "A":
+      param2Num = 1;
+      break;
+  }
+
+  
+  
+  try{ 
+    const heartLast = document.getElementById("heart").lastChild.id;
+    const clubLast = document.getElementById("club").lastChild.id;
+    const spadeLast = document.getElementById("spade").lastChild.id;
+    const diamondLast = document.getElementById("diamond").lastChild.id;
+    
+  }catch(err){
+    
+    console.log("error");
+  }
+
+ 
+  //console.log("suit 2 is " + param2Suit + ", value 2 is " + param2Num);
+
+  if (param2 == "win") {
+    
+    if (param1Num == 1) {
+      console.log("valid Move");
+      return true;
+    } else {
+      if ((param1Num - param2Num == 1) & (param1Suit == param2Suit)) {
+        console.log("valid Move");
+        return true;
+      } else {
+        //console.log("Invalid Move number is larger" + param1Num - param2Num);
+        return false;
+      }
+    }
+  } else {
+    if (colorTo == "" || colorFrom == "") {
+      if (param1Num == 13) {
+        return true;
+      } else {
+        //console.log("Invalid Move no color");
+        return false;
+      }
+    } else {
+      if (colorFrom == colorTo) {
+        //console.log("Invalid Move same color");
+        return false;
+      } else {
+        if (param2Num - param1Num == 1) {
+          //console.log("valid Move");
+          return true;
+        } else {
+          //console.log("Invalid Move number is larger");
+          return false;
+        }
+      }
+    }
+  }
+}
+
+
+//---------------------------------------------------------------------------end of the double click
