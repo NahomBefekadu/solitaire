@@ -77,7 +77,10 @@ DropZone.forEach((element) =>
 
     if (goForIt(droppedEllementID, toEllementID, toFirstEllementID) == true) {
       moves = [droppedEllementID, toEllementID];
-
+      if (finl.classList.contains("topy")) {
+        finl.classList.remove("topy");
+      }
+      
       if (element.id === "heart") {
         console.log("Topy added");
         finl.classList.add("topy");
@@ -95,9 +98,7 @@ DropZone.forEach((element) =>
         finl.classList.add("topy");
       }
 
-      if (finl.classList.contains("topy")) {
-        finl.classList.remove("topy");
-      }
+      
 
       movesHistory.push(moves);
       console.log(movesHistory.length);
