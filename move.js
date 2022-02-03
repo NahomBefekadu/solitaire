@@ -357,11 +357,17 @@ function goForIt(param1, param2, param3) {
 
   console.log("suit 1 is " + param1Suit + ", value 1 is " + param1Num);
   console.log("suit 2 is " + param2Suit + ", value 2 is " + param2Num);
+   
+  if (param3 == "win") {
+    var heart = document.getElementById("heart").lastElementChild.id;
+    var spade = document.getElementById("spade").lastElementChild.id;
+    var club = document.getElementById("club").lastElementChild.id;
+    var diamond = document.getElementById("diamond").lastElementChild.id;
 
-  if (param2 == "win" || param3 == "win") {
-    if (param1Num == 1) {
-      console.log("valid Move");
+  console.log("heartLast is " + heart);
+    if (param1Num == 1 && param2 =="win") {
       return true;
+      
     } else {
       if ((param1Num - param2Num == 1) & (param1Suit == param2Suit)) {
         console.log("valid Move");
@@ -472,16 +478,6 @@ function doubleClickMove(param1, param2 ) {
 
   
   
-  try{ 
-    const heartLast = document.getElementById("heart").lastChild.id;
-    const clubLast = document.getElementById("club").lastChild.id;
-    const spadeLast = document.getElementById("spade").lastChild.id;
-    const diamondLast = document.getElementById("diamond").lastChild.id;
-    
-  }catch(err){
-    
-    console.log("error");
-  }
 
  
   //console.log("suit 2 is " + param2Suit + ", value 2 is " + param2Num);
