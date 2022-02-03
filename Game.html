@@ -34,7 +34,9 @@
           </div>
           <div id="spade" class="Column"><div class="emty" id="win"></div></div>
           <div id="club" class="Column"><div class="emty" id="win"></div></div>
-          <div id="diamond" class="Column"><div class="emty" id="win"></div></div>
+          <div id="diamond" class="Column">
+            <div class="emty" id="win"></div>
+          </div>
           <!--           <img src="/images/heartBig.svg" />
           <img src="/images/spadeBig.svg" />
           <img src="/images/clubBig.svg" />
@@ -52,20 +54,20 @@
           <!--  <div id="move1" class="card2 move" draggable="true"></div>
           <div id="move2" class="card2 move" draggable="true"></div> -->
         </div>
-        <div id="col3" class="Column"  onclick="flip3()">
+        <div id="col3" class="Column" onclick="flip3()">
           <div class="emty"></div>
           <!--      <div id="move3" class="card2"></div>
           <div id="move4" class="card2"></div>
           <div id="move5" class="card2 move" draggable="true"></div> -->
         </div>
-        <div id="col4" class="Column"  onclick="flip4()">
+        <div id="col4" class="Column" onclick="flip4()">
           <div class="emty"></div>
           <!--  <div id="move6" class="card2" draggable="true"></div>
           <div id="move7" class="card2" draggable="true"></div>
           <div id="move8" class="card2" draggable="true"></div>
           <div id="move9" class="card2 move" draggable="true"></div> -->
         </div>
-        <div id="col5" class="Column"  onclick="flip5()">
+        <div id="col5" class="Column" onclick="flip5()">
           <div class="emty"></div>
           <!--     <div id="move10" class="card2"></div>
           <div id="move11" class="card2"></div>
@@ -73,7 +75,7 @@
           <div id="move13" class="card2"></div>
           <div id="move14" class="card2 move" draggable="true"></div> -->
         </div>
-        <div id="col6" class="Column"  onclick="flip6()">
+        <div id="col6" class="Column" onclick="flip6()">
           <div class="emty"></div>
           <!--      <div id="move15" class="card2"></div>
           <div id="move16" class="card2"></div>
@@ -82,7 +84,7 @@
           <div id="move19" class="card2"></div>
           <div id="move20" class="card2 move" draggable="true"></div> -->
         </div>
-        <div id="col7" class="Column"  onclick="flip7()">
+        <div id="col7" class="Column" onclick="flip7()">
           <div class="emty"></div>
           <!--    <div id="move21" class="card2"></div>
           <div id="move22" class="card2"></div>
@@ -105,114 +107,35 @@
           >Go Back
           <img class="spad" src="/images/spade.svg" />
         </a>
-        <!-- <a class="a4" onclick="pause()" href="#"
-          >pause
+        <button class="T1" id="pause">
+          Pause
           <img class="spad" src="/images/spade.svg" />
-        </a> -->
-        <body>
-         
-      <!-- <button class="a2" id="start">Start 
-        <img class="spad" src="/images/spade.svg" /> -->
+        </button>
+        <button class="T1" id="resume">
+          Resume
+          <img class="spad" src="/images/spade.svg" />
+        </button>
 
-      </button>
-      <button class="T1" id="pause" 
-      >Pause 
-        <img class="spad" src="/images/spade.svg" />
-      </button>
-      <button 
-      class="T1" id="resume"
-      
-      >Resume 
-        <img class="spad" src="/images/spade.svg" />
-        
-      </button>
-      
-      
-      </body>
         <a class="a3" href="#" onclick="enableMute()"
           >On/Off Audio
           <img class="spad" src="/images/spade.svg" />
         </a>
-        <label class="switch">
-          <input type="checkbox" onclick="lightChange()" />
-          <span class="slider round"></span>
-        </label>
+        <div class="swTog">
+          <span class="lbl"> 💡</span>
+
+          <label class="switch">
+            <input type="checkbox" onclick="lightChange()" />
+            <span class="slider round"></span>
+          </label>
+        </div>
       </div>
       <div class="bottom_scores">
         <h3 class="moves"></h3>
-        <!-- <h3 class="times" id="timer">30:00</h3> -->
-        <!-- <h3 id="timer" class="times"></h3> -->
-  
       </div>
       <h3 class="bottom_scores" id="timer">30:00</h3>
-
-
-
-<!--       <script>
-        var timer = document.getElementById("timer");
-    var start = document.getElementById("start");
-    var pause = document.getElementById("pause");
-    var resume = document.getElementById("resume");
-    var id;
-    var value = "30:00";
-    startTimer(30, 00);
-    
-function startTimer(m, s) {
-    if (m<10){
-        var testminute = "0" +m;
-    }else{
-        var testminute=m;
-    }
-    if (s<10){
-        var testseconds = "0" +s;
-    }else{
-        var testseconds=s;
-    }
-    timer.textContent = testminute + ":" + testseconds;
-    if (s == 0) {
-        if (m == 0) {
-            return;
-        } else if (m != 0) {
-            m = m - 1;
-            s = 60;
-        }
-    }
-    
-    s = s - 1;
-    id = setTimeout(function () {
-        startTimer(m, s)
-    }, 1000);
-}
-    
-    function pauseTimer() {
-        value = timer.textContent;
-        clearTimeout(id);
-       
-    }
-    
-    function resumeTimer() {
-        var t = value.split(":");
-    
-        startTimer(parseInt(t[0], 10), parseInt(t[1], 10));
-    }
-    
-    // start.addEventListener("click", function () {
-    //     startTimer(30, 00);
-    // }, false);
-    
-    pause.addEventListener("click", pauseTimer, false);
-   
-    resume.addEventListener("click", resumeTimer, false);
-    </script> -->
     </div>
 
-
-
-
-
-
-
-
+    <script type="text/javascript" src="userFunctionality.js"></script>
     <script type="text/javascript" src="card.js"></script>
     <script type="text/javascript" src="cardModule.js"></script>
     <script type="text/javascript" src="topCardMove.js"></script>
@@ -226,9 +149,9 @@ function startTimer(m, s) {
       width="2"
       height="0"
     /> -->
-    <!--  <audio id="audio" loop autoplay>
+    <audio id="audio" loop autoplay>
       <source id="audios" src="/music/Pixel-Drama.mp3" type="audio/mp3" />
       Your browser does not support the audio element.
-    </audio> -->
+    </audio>
   </body>
 </html>

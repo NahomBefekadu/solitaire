@@ -243,12 +243,26 @@ body {
   flex-direction: row;
   justify-content: center;
 }
-
+.flash1 {
+  animation: fl1 2s infinite;
+}
+.flash2 {
+  animation: fl2 0.1s infinite;
+}
 .switch {
   position: relative;
   display: inline-block;
   width: 60px;
   height: 34px;
+}
+.lbl {
+  background: linear-gradient(#df0a03, #19b4b9);
+  font-size: 2em;
+  border-radius: 25%;
+  margin-right: 0.1em;
+}
+.swTog {
+  display: flex;
 }
 
 /* Hide default HTML checkbox */
@@ -317,5 +331,24 @@ input:checked + .slider:before {
     box-shadow: 0 4px #ef2424;
     top: 2px;
     transform: translateY(5px);
+  }
+}
+@keyframes fl1 {
+  0% {
+    color: #fff;
+  }
+  50% {
+    color: rgb(200, 139, 39);
+  }
+  100% {
+    color: rgb(255, 3, 3);
+  }
+}
+@keyframes fl2 {
+  0% {
+    color: #fff;
+  }
+  100% {
+    color: rgb(255, 3, 3);
   }
 }

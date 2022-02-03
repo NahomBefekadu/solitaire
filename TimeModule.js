@@ -4,9 +4,22 @@ var pause = document.getElementById("pause");
 var resume = document.getElementById("resume");
 var id;
 var value = "30:00";
-startTimer(30, 00);
+startTimer(01, 00);
 
 function startTimer(m, s) {
+  if (m < 5) {
+    timer.classList.add("flash1");
+  }
+  if (m < 2) {
+    timer.classList.remove("flash1");
+    timer.classList.add("flash2");
+  }
+
+  if (m <= 0 && s <= 0) {
+    clearTimeout(id);
+    alert("Game Has Finished");
+  }
+
   if (m < 10) {
     var testminute = "0" + m;
   } else {
@@ -47,9 +60,16 @@ function resumeTimer() {
   startTimer(parseInt(t[0], 10), parseInt(t[1], 10));
 }
 
-// start.addEventListener("click", function () {
-//     startTimer(30, 00);
-// }, false);
+function spaceKey(e) {
+  if (e.key === " ") {
+    if (pause.innerHTML === "Paused") {
+      resumeTimer();
+    } else {
+      pauseTimer();
+    }
+  }
+}
+document.addEventListener("keydown", spaceKey, false);
 
 pause.addEventListener("click", pauseTimer, false);
 
