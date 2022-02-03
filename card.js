@@ -24,8 +24,9 @@ document.addEventListener(
     console.log("Drag event has ended");
     console.log("Drag at", wn5);
     if (wn5 ===56) {
-      //window.location.href = "win.html";
-      alert("Congratulations you won!\nYour score is " + numMove*150)
+      //
+      alert("Congratulations you won!\nYour score is " + numMove*150);
+      window.location.href = "win.html";
     }
   },
   false
