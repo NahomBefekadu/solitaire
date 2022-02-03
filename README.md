@@ -35,7 +35,7 @@ This is a simple version of the card game solitaire called Uglitaire completed a
 - [x] Add Shuffle functionality
 - [x] Add Stack functionality
 - [x] Implement Fundemental rule functionality
-   
+       
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
