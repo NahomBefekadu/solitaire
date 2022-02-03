@@ -51,6 +51,8 @@ function pauseTimer() {
   pause.classList.add("Activated");
   pause.innerHTML = "Paused";
   clearTimeout(id);
+  alert("You have paused the game\nHit ok to resume.");
+  resumeTimer();
 }
 
 function resumeTimer() {
