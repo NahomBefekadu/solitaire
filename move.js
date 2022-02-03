@@ -105,7 +105,7 @@ DropZone.forEach((element) =>
       while (el) {
         const finl2 = document.getElementById(el);
         element.appendChild(finl2);
-        el = el.nextSibling;
+        el = el.nextElementSibling.id;
       }
 
       numMove++;
