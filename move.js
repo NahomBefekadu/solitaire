@@ -117,7 +117,7 @@ DropZone.forEach((element) =>
         element.appendChild(finl2);
         console.log("ab4");
         if (ccc > 7) {
-          alert("infinite loop");
+          //alert("infinite loop");
           return;
         }
       }
