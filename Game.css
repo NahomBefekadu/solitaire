@@ -45,11 +45,13 @@ body {
 .card2 {
   background-image: url("/images/BackImg.svg");
   display: inline-block;
-  object-fit: contain;
-  background-size: 160px 150px;
-  width: 160px;
-  height: 150px;
+  object-fit: cover;
+  background-size: 127px 183px;
+  width: 128px;
+  height: 182px;
+  /* margin-bottom: -9.84rem; */
   margin-bottom: -9.84rem;
+  margin-top: 0;
 }
 .card2:hover {
   border: 1px solid #0e30f0;
@@ -107,27 +109,35 @@ body {
 }
 
 #heart {
-  background-image: url("/images/backsplash.svg");
-  width: 160px;
-  height: 210px;
+  background: #aa4806;
+  border-radius: 5%;
+  padding: 1em;
+  width: 140px;
+  height: 193px;
   margin: 10px;
 }
 #club {
-  background-image: url("/images/backsplash.svg");
-  width: 160px;
-  height: 210px;
+  background: #aa4806;
+  border-radius: 5%;
+  padding: 1em;
+  width: 140px;
+  height: 193px;
   margin: 10px;
 }
 #spade {
-  background-image: url("/images/backsplash.svg");
-  width: 160px;
-  height: 210px;
+  background: #aa4806;
+  border-radius: 5%;
+  padding: 1em;
+  width: 140px;
+  height: 193px;
   margin: 10px;
 }
 #diamond {
-  background-image: url("/images/backsplash.svg");
-  width: 160px;
-  height: 210px;
+  background: #aa4806;
+  border-radius: 5%;
+  padding: 1em;
+  width: 140px;
+  height: 193px;
   margin: 10px;
 }
 
@@ -234,7 +244,7 @@ body {
   display: flex;
   flex-direction: column;
   position: absolute;
-  bottom: 100px;
+  bottom: 0;
   width: 100%;
 }
 

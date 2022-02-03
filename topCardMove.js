@@ -21,7 +21,6 @@ function pickCard() {
     x.dataset.status = 1;
     let vs = `/images/cards/${x.dataset.name}.svg`;
     x.style.backgroundImage = `url(${vs})`;
-    x.style.backgroundSize = "164px 151px";
     x.setAttribute("id", x.dataset.name);
     document.getElementById("disc").appendChild(x);
     checkforLast(x.dataset.name);
