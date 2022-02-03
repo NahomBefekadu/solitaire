@@ -2,6 +2,7 @@ var spade = document.getElementById("spade");
 var diamond = document.getElementById("diamond");
 var club = document.getElementById("club");
 var heart = document.getElementById("heart");
+var moves = document.getElementById("winning");
 
 document.addEventListener(
   "dragend",
@@ -22,8 +23,9 @@ document.addEventListener(
     // reset the transparency
     console.log("Drag event has ended");
     console.log("Drag at", wn5);
-    if (wn5 === 56) {
-      window.location.href = "win.html";
+    if (wn5 ===56) {
+      //window.location.href = "win.html";
+      alert("Congratulations you won!\nYour score is " + numMove*m)
     }
   },
   false

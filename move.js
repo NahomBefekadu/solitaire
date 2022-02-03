@@ -44,9 +44,7 @@ DropZone.forEach((element) =>
     console.log("uim here");
     console.log(element.firstElementChild);
 
-    if (finl.classList.contains("topy")) {
-      finl.classList.remove("topy");
-    }
+    
     console.log(finl.classList);
     console.log("This is me");
     console.log(finl.nextElementSibling);
@@ -97,6 +95,10 @@ DropZone.forEach((element) =>
         finl.classList.add("topy");
       }
 
+      if (finl.classList.contains("topy")) {
+        finl.classList.remove("topy");
+      }
+
       movesHistory.push(moves);
       console.log(movesHistory.length);
       console.log(movesHistory);
@@ -116,7 +118,7 @@ DropZone.forEach((element) =>
         console.log("ab3");
         element.appendChild(finl2);
         console.log("ab4");
-        if (ccc > 7) {
+        if (ccc > 13) {
           //alert("infinite loop");
           return;
         }

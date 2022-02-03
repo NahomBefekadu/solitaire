@@ -25,7 +25,14 @@
     </div>
     <div class="Headline">
       <h1>You Won</h1>
-
+      <h3 id="moves">
+        <script >
+          var winning = document.getElementById("winning");
+          var text = document.getElementById("moves");
+          text.innerHtml = "25";
+          console.log("winning is " + winning.innerHtml);
+        </script>
+      </h3>
       <a href="Game.html"
         >Play Again
         <img class="spade" src="/images/spade.svg" />
