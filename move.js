@@ -101,6 +101,8 @@ DropZone.forEach((element) =>
       console.log(movesHistory.length);
       console.log(movesHistory);
       element.appendChild(finl);
+
+      //This is the section for checking for siblings and appending, im using a loop to iterate over them
       let ccc = 1;
       while (el) {
         ccc++;

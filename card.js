@@ -24,7 +24,6 @@ document.addEventListener(
     console.log("Drag at", wn5);
     if (wn5 === 56) {
       window.location.href = "win.html";
-      alert("You have won the game you ye bag");
     }
   },
   false

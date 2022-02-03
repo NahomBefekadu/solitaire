@@ -17,7 +17,7 @@ function startTimer(m, s) {
 
   if (m <= 0 && s <= 0) {
     clearTimeout(id);
-    alert("Game Has Finished");
+    window.location.href = "GameOver.html";
   }
 
   if (m < 10) {
