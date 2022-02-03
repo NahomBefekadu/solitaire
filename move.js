@@ -75,12 +75,16 @@ DropZone.forEach((element) =>
     }
     */
 
+    
     if (goForIt(droppedEllementID, toEllementID, toFirstEllementID) == true) {
+      numMove ++;
+      movesDone.innerHTML = `${numMove} Moves`;
+      console.log("moves are " + numMove);
       moves = [droppedEllementID, toEllementID];
       if (finl.classList.contains("topy")) {
         finl.classList.remove("topy");
       }
-      
+
       if (element.id === "heart") {
         console.log("Topy added");
         finl.classList.add("topy");
@@ -107,8 +111,11 @@ DropZone.forEach((element) =>
 
       //This is the section for checking for siblings and appending, im using a loop to iterate over them
       let ccc = 1;
+      var counter = 0;
       while (el) {
         ccc++;
+        counter++;
+        
         console.log("ab");
         const finl2 = document.getElementById(el);
         if (finl2.nextElementSibling) {
@@ -118,14 +125,16 @@ DropZone.forEach((element) =>
         }
         console.log("ab3");
         element.appendChild(finl2);
-        console.log("ab4");
+        console.log("ab4" + ccc);
+        //numMove++;
         if (ccc > 13) {
+          counter=1;
           //alert("infinite loop");
+          //numMove++;
           return;
         }
       }
-
-      numMove++;
+       
     }
 
     // element.appendChild(finl);
@@ -137,7 +146,7 @@ DropZone.forEach((element) =>
 );
 
 const movesDone = document.querySelector(".moves");
-movesDone.innerHTML = `${numMove} Moves`;
+
 async function updateStatus() {
   movesDone.innerHTML = `${numMove} Moves`;
 }
