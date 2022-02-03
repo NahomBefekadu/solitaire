@@ -48,6 +48,17 @@ DropZone.forEach((element) =>
       finl.classList.remove("topy");
     }
     console.log(finl.classList);
+    console.log("This is me");
+    console.log(finl.nextElementSibling);
+    if (finl.nextElementSibling) {
+      var el = finl.nextElementSibling.id;
+    }
+    // const finl2 = document.getElementById(el);
+    /*     while (el) {
+      element.appendChild(el);
+      el = el.nextSibling;
+    } */
+
     /*
     if (
       element.lastElementChild.classList.contains("red") &&
@@ -90,6 +101,13 @@ DropZone.forEach((element) =>
       console.log(movesHistory.length);
       console.log(movesHistory);
       element.appendChild(finl);
+
+      while (el) {
+        const finl2 = document.getElementById(el);
+        element.appendChild(finl2);
+        el = el.nextSibling;
+      }
+
       numMove++;
     }
 
