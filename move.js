@@ -101,11 +101,23 @@ DropZone.forEach((element) =>
       console.log(movesHistory.length);
       console.log(movesHistory);
       element.appendChild(finl);
-
+      let ccc = 1;
       while (el) {
+        ccc++;
+        console.log("ab");
         const finl2 = document.getElementById(el);
+        if (finl2.nextElementSibling) {
+          console.log("ab2");
+          console.log(finl2.nextElementSibling);
+          var el = finl2.nextElementSibling.id;
+        }
+        console.log("ab3");
         element.appendChild(finl2);
-        el = el.nextElementSibling.id;
+        console.log("ab4");
+        if (ccc > 7) {
+          alert("infinite loop");
+          return;
+        }
       }
 
       numMove++;
