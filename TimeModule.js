@@ -48,8 +48,8 @@ function startTimer(m, s) {
 
 function pauseTimer() {
   value = timer.textContent;
-  pause.classList.add("Activated");
-  pause.innerHTML = "Paused";
+  //pause.classList.add("Activated");
+  //pause.innerHTML = "Paused";
   clearTimeout(id);
   alert("You have paused the game\nHit ok to resume.");
   resumeTimer();
@@ -57,8 +57,8 @@ function pauseTimer() {
 
 function resumeTimer() {
   var t = value.split(":");
-  pause.classList.remove("Activated");
-  pause.innerHTML = "Pause";
+  //pause.classList.remove("Activated");
+  //pause.innerHTML = "Pause";
   startTimer(parseInt(t[0], 10), parseInt(t[1], 10));
 }
 

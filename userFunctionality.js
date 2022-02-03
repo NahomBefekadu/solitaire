@@ -1,7 +1,7 @@
 const sleepNow = (delay) =>
   new Promise((resolve) => setTimeout(resolve, delay));
 
-document.documentElement.setAttribute("data-theme", "light");
+document.documentElement.setAttribute("data-theme", "dark");
 function enableMute() {
   var audio = document.getElementById("audio");
   audio.muted = !audio.muted;
