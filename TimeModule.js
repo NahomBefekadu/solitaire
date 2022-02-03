@@ -4,7 +4,7 @@ var pause = document.getElementById("pause");
 var resume = document.getElementById("resume");
 var id;
 var value = "30:00";
-startTimer(01, 00);
+startTimer(30, 00);
 
 function startTimer(m, s) {
   if (m < 5) {
