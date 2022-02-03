@@ -16,6 +16,16 @@ if (heart.hasChildNodes()) {
   var wn4 = heart.children.length;
 }
 var wn5 = wn1 + wn2 + wn3 + wn4;
-if (wn5 === 52) {
-  window.location.href = "win.html";
-}
+
+document.addEventListener(
+  "dragend",
+  function (event) {
+    // reset the transparency
+    console.log("Drag event has ended");
+    if (wn5 === 52) {
+      window.location.href = "win.html";
+      alert("You have won the game you ye bag");
+    }
+  },
+  false
+);
