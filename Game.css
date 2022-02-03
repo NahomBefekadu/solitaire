@@ -51,6 +51,10 @@ body {
   height: 150px;
   margin-bottom: -9.84rem;
 }
+.card2:hover {
+  border: 1px solid #0e30f0;
+  border-radius: 7px;
+}
 .topy {
   display: block;
   object-fit: contain;
