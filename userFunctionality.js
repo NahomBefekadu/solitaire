@@ -4,6 +4,12 @@ const sleepNow = (delay) =>
 document.documentElement.setAttribute("data-theme", "dark");
 function enableMute() {
   var audio = document.getElementById("audio");
+  var emoj = document.getElementById("audEmoj");
+  if (!audio.muted) {
+    emoj.innerHTML = "🔇";
+  } else {
+    emoj.innerHTML = "🔊";
+  }
   audio.muted = !audio.muted;
 }
 function lightChange() {

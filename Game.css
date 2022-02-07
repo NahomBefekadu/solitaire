@@ -1,13 +1,17 @@
 :root {
   --main-bg-color: black;
+  --main-BG: url("/images/light.png");
   --text-color: #fff;
 }
 [data-theme="dark"] {
   --main-bg-color: #e99d6c;
+  --main-BG: url("/images/drk.png");
   --text-color: rgb(148, 134, 134);
 }
 body {
-  background-color: var(--main-bg-color);
+  /* background-color: var(--main-bg-color); */
+  background-image: var(--main-BG);
+  background-repeat: repeat;
 }
 .header {
   background-color: #d74e30;
@@ -189,7 +193,7 @@ body {
   margin-right: 2em;
   font-size: 2em;
   height: 1.25em;
-  width: 7.4em;
+  width: 1.4em;
   color: #fff;
   text-decoration: none;
   background: linear-gradient(#df2403, #9774ad);
@@ -212,16 +216,15 @@ body {
   display: flex;
   justify-content: space-between;
 }
- 
+
 .a4:hover,
 .a3:hover,
 .a2:hover,
 .a1:hover,
-.T1:hover
- {
+.T1:hover {
   opacity: 0.5;
 }
- 
+
 .spad {
   width: 0.6em;
 }
